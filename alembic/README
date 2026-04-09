@@ -1,0 +1,7 @@
+Alembic migrations live in `alembic/versions`.
+
+Guidelines:
+- migrations are the source of truth for schema evolution
+- keep migration files static, reviewable, and descriptive
+- do not place business logic in migrations
+- import ORM models through `app.models` so autogenerate can discover metadata

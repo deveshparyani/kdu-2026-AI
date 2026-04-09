@@ -1,0 +1,84 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fastapi-template"
+version = "0.1.0"
+description = "Reusable, production-ready FastAPI template scaffold."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "alembic>=1.14.0,<2.0.0",
+  "email-validator>=2.2.0,<3.0.0",
+  "fastapi>=0.115.0,<1.0.0",
+  "greenlet>=3.1.0,<4.0.0",
+  "passlib[argon2,bcrypt]>=1.7.4,<2.0.0",
+  "pydantic>=2.10.0,<3.0.0",
+  "PyJWT>=2.10.0,<3.0.0",
+  "pydantic-settings>=2.6.0,<3.0.0",
+  "psycopg[binary]>=3.2.0,<4.0.0",
+  "sqlalchemy>=2.0.36,<3.0.0",
+  "uvicorn[standard]>=0.34.0,<1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "aiosqlite>=0.20.0,<1.0.0",
+  "httpx>=0.28.0,<1.0.0",
+  "mypy>=1.14.0,<2.0.0",
+  "pre-commit>=4.1.0,<5.0.0",
+  "pytest>=8.3.0,<9.0.0",
+  "pytest-cov>=6.0.0,<7.0.0",
+  "ruff>=0.9.0,<1.0.0",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+filterwarnings = [
+  "ignore:Accessing argon2.__version__ is deprecated:DeprecationWarning:passlib.handlers.argon2",
+]
+markers = [
+  "anyio: run async tests with the AnyIO asyncio backend",
+]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["app"]
+
+[tool.coverage.report]
+fail_under = 70
+show_missing = true
+skip_covered = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N", "ASYNC"]
+
+[tool.ruff.lint.per-file-ignores]
+"app/api/dependencies/auth.py" = ["UP045"]
+"app/models/user.py" = ["UP045"]
+"app/schemas/user.py" = ["UP045"]
+"app/schemas/auth.py" = ["UP045"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python_version = "3.9"
+files = ["app", "tests"]
+check_untyped_defs = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+pretty = true
+show_error_codes = true
+strict_equality = true
+warn_return_any = true
+warn_unused_configs = true
