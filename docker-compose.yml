@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: multimodal-assistant-postgres
+    environment:
+      POSTGRES_DB: assistant_db
+      POSTGRES_USER: assistant_user
+      POSTGRES_PASSWORD: assistant_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

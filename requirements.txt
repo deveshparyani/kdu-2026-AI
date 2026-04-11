@@ -1,0 +1,10 @@
+langchain
+langgraph
+langchain_community
+langchain-openai
+langchain-groq
+langchain-google-genai
+python-dotenv
+langchain-xai
+fastapi
+streamlit
