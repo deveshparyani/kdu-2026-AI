@@ -1,0 +1,12 @@
+langgraph
+langchain
+langchain-groq
+langchain-core
+langsmith
+openai
+langchain-openai
+pydantic
+python-dotenv
+requests
+tqdm
+typing-extensions

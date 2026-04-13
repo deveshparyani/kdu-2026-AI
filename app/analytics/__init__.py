@@ -1,0 +1,1 @@
+from app.analytics.langsmith_utils import record_llm_observation
