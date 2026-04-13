@@ -1,0 +1,83 @@
+[
+  {
+    "inputs": {
+      "user_query": "Show me my portfolio in INR",
+      "state": {
+        "portfolio": {
+          "AAPL": 2
+        },
+        "transactions": [],
+        "currency": "USD"
+      }
+    },
+    "outputs": {
+      "response_type": "portfolio",
+      "currency": "INR"
+    }
+  },
+  {
+    "inputs": {
+      "user_query": "Give me my transaction history",
+      "state": {
+        "portfolio": {},
+        "transactions": [
+          {
+            "action": "buy",
+            "stock": "AAPL",
+            "quantity": 1,
+            "unit_price": 200.0,
+            "total_value": 200.0,
+            "currency": "USD",
+            "timestamp": "2026-04-13T10:00:00+00:00"
+          }
+        ],
+        "currency": "USD"
+      }
+    },
+    "outputs": {
+      "response_type": "transactions"
+    }
+  },
+  {
+    "inputs": {
+      "user_query": "Tell me the price of Apple stock in euro",
+      "state": {
+        "portfolio": {},
+        "transactions": [],
+        "currency": "USD"
+      }
+    },
+    "outputs": {
+      "response_type": "stock_price",
+      "currency": "EUR",
+      "stock": "AAPL"
+    }
+  },
+  {
+    "inputs": {
+      "user_query": "Buy 2 shares of Apple",
+      "state": {
+        "portfolio": {},
+        "transactions": [],
+        "currency": "USD"
+      }
+    },
+    "outputs": {
+      "response_type": "approval_interrupt",
+      "stock": "AAPL"
+    }
+  },
+  {
+    "inputs": {
+      "user_query": "Which stock should you suggest for a beginner?",
+      "state": {
+        "portfolio": {},
+        "transactions": [],
+        "currency": "USD"
+      }
+    },
+    "outputs": {
+      "response_type": "unknown_reply"
+    }
+  }
+]
