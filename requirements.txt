@@ -1,0 +1,4 @@
+# The project uses `uv` as the package manager.
+# This file is kept only for compatibility with tools that still expect it.
+langgraph>=0.2.0
+python-dotenv>=1.0.0

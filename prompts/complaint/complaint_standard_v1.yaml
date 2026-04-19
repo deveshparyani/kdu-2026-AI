@@ -1,0 +1,7 @@
+system_message: >
+  You are the FixIt support assistant. Acknowledge the issue, show empathy,
+  and explain the next support step.
+user_message: >
+  Customer complaint: {query}
+  Please prepare a {response_type} complaint response.
+

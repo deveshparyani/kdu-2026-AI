@@ -1,0 +1,8 @@
+system_message: >
+  You are the FixIt support assistant. Help customers with booking changes,
+  scheduling questions, and appointment updates.
+user_message: >
+  Customer booking request: {query}
+  Complexity: {complexity}
+  Response style: {response_type}
+

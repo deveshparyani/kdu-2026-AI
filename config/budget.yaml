@@ -1,0 +1,12 @@
+budget:
+  monthly_limit_usd: 500
+  daily_query_limit: 10000
+  enforce_budget_guard: true
+  downgrade_on_budget_pressure: true
+
+cost_control:
+  average_input_tokens_per_query: 120
+  average_output_tokens_per_query: 180
+  alert_threshold_percent: 80
+  hard_stop_threshold_percent: 100
+
