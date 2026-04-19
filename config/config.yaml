@@ -1,0 +1,55 @@
+app:
+  name: fixit-support-llmops
+  environment: production
+  version: "1.0.0"
+
+fallback:
+  default_model: cheap
+  on_model_failure: cheap
+  on_budget_exceeded: cheap
+
+prompts:
+  faq:
+    simple:
+      version: "v1"
+      template_id: "faq_simple_v1"
+    standard:
+      version: "v1"
+      template_id: "faq_standard_v1"
+
+  booking:
+    simple:
+      version: "v1"
+      template_id: "booking_simple_v1"
+    standard:
+      version: "v1"
+      template_id: "booking_standard_v1"
+    complex:
+      version: "v1"
+      template_id: "booking_complex_v1"
+
+  complaint:
+    standard:
+      version: "v1"
+      template_id: "complaint_standard_v1"
+    complex:
+      version: "v2"
+      template_id: "complaint_complex_v2"
+
+orchestrator:
+  model: cheap
+  output_schema:
+    category:
+      allowed: [FAQ, booking, complaint]
+    complexity:
+      allowed: [low, medium, high]
+    response_type:
+      allowed: [simple, standard, complex]
+
+logging:
+  track_query: true
+  track_route: true
+  track_model_used: true
+  track_prompt_version: true
+  track_cost: true
+

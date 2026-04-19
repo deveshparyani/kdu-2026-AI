@@ -1,0 +1,61 @@
+routing:
+  FAQ:
+    low:
+      simple:
+        handler: faq_handler
+        model: cheap
+        prompt: faq.simple
+      standard:
+        handler: faq_handler
+        model: cheap
+        prompt: faq.standard
+
+    medium:
+      simple:
+        handler: faq_handler
+        model: standard
+        prompt: faq.standard
+      standard:
+        handler: faq_handler
+        model: standard
+        prompt: faq.standard
+
+  booking:
+    low:
+      simple:
+        handler: booking_handler
+        model: cheap
+        prompt: booking.simple
+
+    medium:
+      standard:
+        handler: booking_handler
+        model: standard
+        prompt: booking.standard
+
+    high:
+      complex:
+        handler: booking_handler
+        model: premium
+        prompt: booking.complex
+
+  complaint:
+    low:
+      standard:
+        handler: complaint_handler
+        model: standard
+        prompt: complaint.standard
+
+    medium:
+      standard:
+        handler: complaint_handler
+        model: standard
+        prompt: complaint.standard
+
+    high:
+      complex:
+        handler: complaint_handler
+        model: premium
+        prompt: complaint.complex
+        human_handoff: true
+
