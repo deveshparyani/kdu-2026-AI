@@ -1,0 +1,31 @@
+[project]
+name = "tri-model-ai-assistant"
+version = "0.1.0"
+description = "A local tri-model AI assistant built with LangGraph and Hugging Face Transformers."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Student Developer" },
+]
+dependencies = [
+    "langgraph",
+    "transformers>=4.45,<5.0",
+    "torch",
+    "sentencepiece",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
