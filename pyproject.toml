@@ -1,0 +1,12 @@
+[project]
+name = "handson-6"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "crewai>=1.14.4",
+    "crewai-tools>=1.14.4",
+    "pydantic>=2.12.5",
+    "python-dotenv>=1.2.2",
+]
