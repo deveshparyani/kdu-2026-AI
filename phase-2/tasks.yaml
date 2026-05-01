@@ -1,0 +1,45 @@
+research_task:
+  description: >
+    Research this topic:
+
+    {topic}
+
+    Produce useful findings, practical implementation notes, risks,
+    and important tradeoffs. Mention uncertainty clearly.
+  expected_output: >
+    A research brief with bullet points covering key facts, implementation
+    details, risks, tradeoffs, and any uncertainty.
+  agent: researcher
+
+fact_check_task:
+  description: >
+    Review the research brief for this topic:
+
+    {topic}
+
+    Check whether the claims are clear, supported, and internally consistent.
+    Identify weak claims, missing evidence, contradictions, and uncertainty.
+  expected_output: >
+    A fact-check report containing:
+    1. APPROVED or NEEDS_REVISION
+    2. Weak or unsupported claims
+    3. Contradictions, if any
+    4. Overall confidence: low, medium, or high
+  agent: fact_checker
+
+writing_task:
+  description: >
+    Write a final report about this topic:
+
+    {topic}
+
+    Use the research brief and fact-checking feedback. Do not invent facts.
+    Mention uncertainty where needed.
+  expected_output: >
+    A very detailed long-form executive report with sections, subsections,
+    examples, risks, recommendations, implementation notes, and a final
+    conclusion.
+
+    Important: The report should be detailed even though the writer's
+    backstory says the writer prefers concise writing.
+  agent: writer

@@ -1,0 +1,78 @@
+research_task:
+  description: >
+    Research this topic:
+
+    {topic}
+
+    Produce useful research notes with key concepts, implementation details,
+    risks, tradeoffs, and important observations.
+  expected_output: >
+    A clear research brief with bullet points covering key facts,
+    implementation notes, risks, and tradeoffs.
+  agent: researcher
+
+fact_check_task:
+  description: >
+    Review this research output for the topic:
+
+    {topic}
+
+    Research output:
+
+    {research_output}
+
+    Decide whether the research is approved or needs revision.
+    Check for weak claims, unsupported statements, vague reasoning,
+    contradictions, and missing evidence.
+  expected_output: >
+    Return only valid JSON in this exact format:
+
+    {
+      "status": "APPROVED" or "NEEDS_REVISION",
+      "issues": ["list of issues"],
+      "confidence": "low" or "medium" or "high"
+    }
+  agent: fact_checker
+
+revision_task:
+  description: >
+    Revise the research for this topic:
+
+    {topic}
+
+    Current research output:
+
+    {research_output}
+
+    Fact-check issues to fix:
+
+    {issues}
+
+    Improve the research by directly addressing each issue.
+  expected_output: >
+    Revised research notes that directly address the fact-check issues.
+  agent: researcher
+
+writing_task:
+  description: >
+    Write a final report for this topic:
+
+    {topic}
+
+    Approved research output:
+
+    {research_output}
+
+    Fact-check status:
+
+    {fact_check_status}
+
+    Use only the approved research. Do not invent facts.
+  expected_output: >
+    A final structured report with:
+    1. Summary
+    2. Key findings
+    3. Risks and tradeoffs
+    4. Fact-checking result
+    5. Conclusion
+  agent: writer
