@@ -1,0 +1,22 @@
+# Why this file exists:
+# It keeps generated files, local secrets, and build folders out of git.
+
+# Environment files
+.env
+.env.local
+
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+
+# OS files
+.DS_Store
