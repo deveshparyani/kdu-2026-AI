@@ -1,0 +1,33 @@
+define bot refuse sensitive information
+  "I cannot reveal sensitive or internal information."
+
+define flow block instruction override attempts
+  $is_prompt_injection = execute detect_prompt_injection
+
+  if $is_prompt_injection
+    bot refuse sensitive information
+    stop
+
+define flow block debug mode attempts
+  $is_debug_mode_attempt = execute detect_debug_mode_attempt
+
+  if $is_debug_mode_attempt
+    bot refuse sensitive information
+    stop
+
+define flow block protected internal data requests
+  $is_protected_data_request = execute detect_protected_data_request
+
+  if $is_protected_data_request
+    bot refuse sensitive information
+    stop
+
+define flow block internal profile dumps
+  $contains_internal_profile = execute detect_internal_profile_dump
+
+  if $contains_internal_profile
+    bot refuse sensitive information
+    stop
+
+define flow mask ssn in bot response
+  $bot_message = execute mask_ssns(text=$bot_message)

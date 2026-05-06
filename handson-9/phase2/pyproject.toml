@@ -1,0 +1,11 @@
+[project]
+name = "phase2-bedrock-guardrails-demo"
+version = "0.1.0"
+description = "Educational AWS Bedrock Guardrails demo with local Ollama Llama 3 8B"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "boto3>=1.42.0",
+    "httpx>=0.28.0",
+    "python-dotenv>=1.0.0",
+]
