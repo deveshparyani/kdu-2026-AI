@@ -1,0 +1,16 @@
+models:
+  - type: main
+    engine: openai
+    model: gpt-4.1-nano
+
+rails:
+  input:
+    flows:
+      - block instruction override attempts
+      - block debug mode attempts
+      - block protected internal data requests
+
+  output:
+    flows:
+      - block internal profile dumps
+      - mask ssn in bot response
